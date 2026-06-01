@@ -13,7 +13,7 @@ function calcularCompra() {
 
     
     // REGRA 1: Validação do Cupom de Desconto
-    //O nome do cupom oficial é "PROMO10". 
+    // O nome do cupom oficial é "PROMO10". 
     // Use .toUpperCase() para garantir que funcione se o usuário digitar "promo10" ou "Promo10"
     
     // Faça um teste condicional (if): se o 'cupomDigitado' for igual ao cupom oficial o valor de desconto será = a 10
@@ -22,6 +22,9 @@ function calcularCompra() {
     
     let desconto = 0;
     
+    if (cupomDigitado.toUpperCase() === "PROMO10") {
+        desconto = 10;
+    }
 
 
     // REGRA 2: Aplicação do Desconto no Valor do Produto
@@ -31,6 +34,7 @@ function calcularCompra() {
     // O 'valorOriginal' do produto MENOS (-) o 'desconto' que você descobriu na Regra 1.
     
     // ESCREVA SEU CÓDIGO AQUI:
+    let valorComDesconto = valorOriginal - desconto;
 
 
   
@@ -44,6 +48,11 @@ function calcularCompra() {
     let frete = 0;
     
     // ESCREVA SEU IF / ELSE AQUI:
+    if (valorComDesconto >= 100) {
+        frete = 0;
+    } else {
+        frete = 15;
+    }
 
 
    
@@ -53,6 +62,7 @@ function calcularCompra() {
     // Ela deve guardar a soma (+) do 'valorComDesconto' com a taxa do 'frete'.
     
     // ESCREVA SEU CÓDIGO AQUI:
+    let totalFinal = valorComDesconto + frete;
 
 
     // =================================================================
